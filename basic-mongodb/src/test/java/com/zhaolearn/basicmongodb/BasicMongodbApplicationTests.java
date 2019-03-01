@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -40,4 +41,20 @@ public class BasicMongodbApplicationTests {
         System.out.println(people1.toString());
     }
 
+    @Test
+    public void saveList() {
+        List<People> peopleList = new ArrayList<>();
+        List<People> peopleList1 = new ArrayList<>();
+        for (int i = 50; i < 55; i++) {
+            People e = new People("Template" + i,i + "");
+            peopleList.add(e);
+        }
+        for (int i = 55; i < 60; i++) {
+            People e = new People("Repository" + i,i + "");
+            peopleList1.add(e);
+        }
+        //由于执行后，会令Entity从新建状态变为持久状态,那么第二次存的时候，也就是原来的数据，所以需要分开List
+        useMongoTemplate.saveList(peopleList);
+        peopleService.saveList(peopleList1);
+    }
 }
