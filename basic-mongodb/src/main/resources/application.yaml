@@ -6,4 +6,5 @@ spring:
       database: test_mongodb
       username: root
       password: mongodb123
-      #uri:多数据源配置
+#      多数据源配置
+#      uri: mongodb://localhost:27017/test_mongodb
