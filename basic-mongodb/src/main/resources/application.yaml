@@ -4,7 +4,13 @@ spring:
       host: localhost
       port: 27017
       database: test_mongodb
-      username: root
+      #记得这个跟mysql不一样，Mongodb是每个数据库不同账号，root是超级管理员，这个是子账号
+      username: testMongodbAdmin
       password: mongodb123
-#      多数据源配置
-#      uri: mongodb://localhost:27017/test_mongodb
+
+
+#多数据源配置的办法
+#spring:
+#  data:
+#    mongodb:
+#      uri: mongodb://testMongodbAdmin:mongodb123@127.0.0.1:27017/test_mongodb
