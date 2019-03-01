@@ -20,4 +20,8 @@ public class PeopleServiceImpl {
         People people=peopleRepository.findByName(name);
         return people;
     }
+
+    public List<People> saveList(List<People> peopleList) {
+        return peopleRepository.saveAll(peopleList);
+    }
 }
