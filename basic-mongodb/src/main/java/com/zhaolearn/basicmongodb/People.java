@@ -11,6 +11,16 @@ public class People {
     public void setName(String name) { this.name = name; }
     public String getAge() { return age; }
     public void setAge(String age) { this.age = age; }
+    public People() { }
+    public People(String name, String age) {
+        this.name = name;
+        this.age = age;
+    }
+    public People(String id, String name, String age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
     @Override
     public String toString() {
         return "People{" +
