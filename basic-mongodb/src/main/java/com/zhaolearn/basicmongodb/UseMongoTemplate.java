@@ -15,4 +15,10 @@ public class UseMongoTemplate {
         List<People>  peopleList = mongotemplate.findAll(People.class);
         return peopleList;
     }
+    public People findName(String name){
+        Query query = new Query();
+        query.addCriteria(Criteria.where("name").is(name));
+        People people= mongotemplate.findOne(query,People.class);
+        return people;
+    }
 }
