@@ -29,6 +29,15 @@ public class BasicMongodbApplicationTests {
         peopleList1.stream().forEach(e->System.out.println(e.toString()));
     }
 
-
+    @Test
+    public void findName() {
+        String name="test03";
+        People people=peopleService.findName(name);
+        System.out.println("Repository：");
+        System.out.println(people.toString());
+        People people1=useMongoTemplate.findName(name);
+        System.out.println("Template：");
+        System.out.println(people1.toString());
+    }
 
 }
