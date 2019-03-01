@@ -14,4 +14,10 @@ public class PeopleServiceImpl {
     public List<People> findAll() {
        return peopleRepository.findAll();
     }
+
+
+    public People findName(String name) {
+        People people=peopleRepository.findByName(name);
+        return people;
+    }
 }
