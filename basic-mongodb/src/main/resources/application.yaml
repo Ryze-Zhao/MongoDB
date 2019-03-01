@@ -1,1 +1,10 @@
-
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: test_mongodb
+      username: root
+      password: mongodb123
+      #选填，有密码就填
+      #password:
