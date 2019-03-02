@@ -1,5 +1,6 @@
 package com.zhaolearn.basicmongodb;
 
+import com.mongodb.client.result.DeleteResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -7,7 +8,6 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -29,4 +29,9 @@ public class UseMongoTemplate {
         Collection<People> peopleList1=mongotemplate.insert(peopleList,People.class);
         return new ArrayList(peopleList1);
     }
+
+    public void updatePeople(People people) {
+        mongotemplate.save(people);
+    }
+
 }
