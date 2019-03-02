@@ -29,4 +29,7 @@ public class PeopleServiceImpl {
         peopleRepository.save(people);
     }
 
+    public void deletePeopleByID(String id) {
+        peopleRepository.deleteById(id);
+    }
 }
