@@ -34,4 +34,10 @@ public class UseMongoTemplate {
         mongotemplate.save(people);
     }
 
+    public long deletePeopleByID(String id) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("id").is(id));
+        long result = mongotemplate.remove(query, People.class).getDeletedCount();
+        return result;
+    }
 }
