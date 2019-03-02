@@ -24,4 +24,9 @@ public class PeopleServiceImpl {
     public List<People> saveList(List<People> peopleList) {
         return peopleRepository.saveAll(peopleList);
     }
+
+    public void updatePeople(People people) {
+        peopleRepository.save(people);
+    }
+
 }
