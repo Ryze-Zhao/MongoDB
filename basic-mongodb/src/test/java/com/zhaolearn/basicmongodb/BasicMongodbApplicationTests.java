@@ -57,4 +57,13 @@ public class BasicMongodbApplicationTests {
         useMongoTemplate.saveList(peopleList);
         peopleService.saveList(peopleList1);
     }
+    @Test
+    public void updatePeople() {
+        People people50=peopleService.findName("Template50");
+        People people51=peopleService.findName("Template51");
+        people50.setName("111111111");
+        people51.setName("222222222");
+        peopleService.updatePeople(people50);
+        useMongoTemplate.updatePeople(people51);
+    }
 }
