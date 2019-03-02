@@ -66,4 +66,10 @@ public class BasicMongodbApplicationTests {
         peopleService.updatePeople(people50);
         useMongoTemplate.updatePeople(people51);
     }
+
+    @Test
+    public void deletePeopleByID() {
+        peopleService.deletePeopleByID("5c78cc6ab872fc0b243ccc35");
+        useMongoTemplate.deletePeopleByID("5c78cc6ab872fc0b243ccc36");
+    }
 }
